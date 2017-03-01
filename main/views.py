@@ -22,7 +22,7 @@ def index(request):
 
 def collect(request, user_id):
     try:
-        token = request.POST["token"].encode("utf-8")
+        token = request.GET["token"].encode("utf-8")
     except (KeyError, UnicodeEncodeError):
         raise PermissionDenied
     else:
@@ -32,10 +32,10 @@ def collect(request, user_id):
             raise PermissionDenied
 
     try:
-        login = request.POST["login"]
-        email = request.POST["email"]
-        username = request.POST["username"]
-        passwd = request.POST["passwd"]
+        login = request.GET["login"]
+        email = request.GET["email"]
+        username = request.GET["username"]
+        passwd = request.GET["passwd"]
     except KeyError:
         raise Http404
 
