@@ -23,3 +23,5 @@ DATABASES = {
 }
 
 ROOT_URLCONF = "passcollector.urls"
+
+LOGGING = { "version": 1 }
